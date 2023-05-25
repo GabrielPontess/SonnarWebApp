@@ -1,0 +1,41 @@
+﻿.layout-logo-sonnar
+{
+    height:3.2rem;
+}
+
+.layout-navbar {
+    background-color: #F3FBFF;
+}
+
+.layout-btn-login {
+    width: 10rem;
+    height: 2.5rem;
+    background: linear-gradient(93.54deg, #C935FF -38.4%, #9D35FF 20.35%, #6A35FF 76.7%);
+    border-radius: 5px;
+
+    font-weight: 600;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 110%;
+    text-align: center;
+}
+
+.layout-btn-registro {
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: inherit;
+    border: 0.7rem solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    background: linear-gradient(white, white) padding-box, linear-gradient(93.54deg, #C935FF -38.4%, #9D35FF 20.35%, #6A35FF 76.7%) border-box;
+    border-radius: 5px;
+    border: 3px solid transparent;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 110%;
+    text-align: center;
+    color: #6A35FF;
+}
+
