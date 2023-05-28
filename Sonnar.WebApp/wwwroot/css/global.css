@@ -6,12 +6,41 @@ html {
     position: relative;
     min-height: 100%;
     box-sizing: border-box;
+    background: #131B21;
 }
 
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+}
+.sonnar-link {
+    color: #BA68C8;
+    cursor:pointer;
+}
+
+
+.sonnar-link:hover {
+    color: #702A7C;
+}
+
+.sonnar-card-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #FFFEFE;
+    border-radius: 1rem;
+    color: rgba(26, 41, 52, 0.7);
+}
+
+.form-control:hover {
+    box-shadow: 2px 3px 5px #00000005;
+}
+
+.form-control:focus {
+    border-color: #edbead;
+    box-shadow: none;
 }
 
 button, input[type="submit"], input[type="reset"] {
@@ -28,9 +57,27 @@ button, input[type="submit"], input[type="reset"] {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
+
+html,body{
+    min-height: 100vh;
+}
 body {
-    margin: 0 0 12px 0;
+    margin: 0;
     box-sizing:border-box;
     background: #131B21;
     color: #eee;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.form-control:hover {
+    box-shadow: 0px 1px 3px #5D00FF36
+}
+
+.form-control:focus {
+    border-color: #7E57C2;
+    box-shadow: none;
 }

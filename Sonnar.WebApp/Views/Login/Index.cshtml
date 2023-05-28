@@ -1,7 +1,33 @@
-﻿@{
+﻿<link rel="stylesheet" href="~/css/Login/styles.css" />
+<link rel="stylesheet" href="~/css/LandingPage/styles.css" />
+
+@{
     ViewData["Title"] = "Login";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Porra de Login</h1>
+<div class="container-fluid container-md mt-5" style="min-height: 70vh">
+    <div class="row h-100">
+        <div class="col justify-content-md-center justify-content-start align-items-center h-100">
+            <h1 class="landing-page-txt-span fs-1 mb-4">Faça parte da comunidade de <span class="landing-page-txt-span-chromo">Analista QA</span> mais querida do Brasil.</h1>
+            <div class="landing-page-txt-span-subtitle fs-5">Crie uma conta gratuitamente <a class="sonnar-link" asp-controller="Registro" asp-action="Index">clicando aqui.</a></div>
+        </div>
+        <div class="col h-100 d-flex flex-row justify-content-center align-content-center">
+            <div class="sonnar-card-background w-75 pt-4 pb-5 ps-4 pe-4">
+                <div name="Logo" >
+                    <img src="~/assets/img/sonnar-logo-column.png" />
+                </div>
+                <form class="w-100">
+                    <div class="mb-1">
+                        <label for="txtEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="txtEmail" aria-describedby="Email" placeholder="Digite seu email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="txtPassword" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="txtPassword" placeholder="Digite sua senha">
+                    </div>
+                    <button type="submit" class="layout-btn-login" style="color:snow; width:100%">Login</button>
+                </form> 
+            </div>
+        </div>
+    </div>
 </div>

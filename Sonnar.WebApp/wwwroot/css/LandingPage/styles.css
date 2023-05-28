@@ -2,15 +2,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 1rem 0;
     padding: 0.8rem;
-    gap: 0.5rem;
-
     background: rgba(255, 255, 255, 0.06);
     border-radius: 1rem;
-
-    text-align:center;
+    text-align: center;
     /* Font */
+    gap: 1rem;
     font-family: 'DM Sans';
     font-size: 1rem;
     font-weight: 700;
@@ -21,6 +18,10 @@
 
 .landing-page-card-ico{
     height: 2.2rem;
+}
+
+.landing-page-card-img {
+    height: 7rem;
 }
 
 .landing-page-txt-span {
@@ -49,4 +50,8 @@
     font-size: 1.2rem;
     line-height: 150%;
     color: #D1D6F0;
+}
+
+.landing-page-col-4 {
+    width: 32.33333333%;
 }

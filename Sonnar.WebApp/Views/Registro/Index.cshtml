@@ -1,7 +1,50 @@
-﻿@{
+﻿<link rel="stylesheet" href="~/css/Login/styles.css" />
+<link rel="stylesheet" href="~/css/LandingPage/styles.css" />
+<link rel="stylesheet" href="~/css/Registro/styles.css" />
+
+@{
     ViewData["Title"] = "Registro";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Registro</h1>
+<div class="container-fluid container-md h-100 mb-5">
+    <div class="row d-flex align-items-center h-100">
+        <div class="col d-flex flex-column h-100">
+            <h1 class="landing-page-txt-span fs-1 mb-4">Crie sua conta <span class="landing-page-txt-span-chromo">gratuitamente</span> e <span class="landing-page-txt-span-chromo">aumente</span> sua produtividade.</h1>
+            <div class="landing-page-txt-span-subtitle fs-5">Ajude o nosso projeto a se manter no ar <a class="sonnar-link" asp-controller="Login" asp-action="Index">clicando aqui.</a></div>
+        </div>
+        <div class="col h-100 d-flex flex-row justify-content-center align-content-center mt-5">
+            <div class="sonnar-card-background w-75 pt-4 pb-5 ps-4 pe-4">
+                <form class="w-100 needs-validation" novalidate>
+                    <span class="text-muted fs-6">Preencha todos os campos abaixo*</span>
+                    <hr>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="txtNome" aria-describedby="Email" placeholder="Digite seu Nome" required>
+                        <label for="txtEmail" class="form-label">Nome</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="txtEmail" aria-describedby="Email" placeholder="Digite seu Email" required>
+                        <label for="txtEmail" class="form-label">Email</label>
+                    </div>
+                    <div class="form-floating mb-3 ">
+                        <input type="text" class="form-control" id="txtCargo" aria-describedby="Email" placeholder="Digite seu Cargo" required>
+                        <label for="txtEmail" class="form-label">Cargo</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="date" class="form-control" id="dtNasc" aria-describedby="Email" placeholder="Digite seu email" required>
+                        <label for="txtEmail" class="form-label">Data de Nascimento</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="txtPassword" placeholder="Digite sua senha" required>
+                        <label for="txtPassword" class="form-label">Senha</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="txtConfirmPassword" placeholder="Confirme sua senha" required>
+                        <label for="txtPassword" class="form-label">Confirmar senha</label>
+                    </div>
+                    <button type="submit" class="layout-btn-login" style="color:snow; width:100%">Registrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
