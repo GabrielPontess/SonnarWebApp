@@ -1,6 +1,6 @@
 ﻿namespace Sonnar.Domain.Enumerators
 {
-    public enum StepStatus
+    public enum StatusStep
     {
         Aberto,
         Reprovado,
