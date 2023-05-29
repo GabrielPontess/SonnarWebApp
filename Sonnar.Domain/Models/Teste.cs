@@ -16,6 +16,7 @@ namespace Sonnar.Domain.Models
         public Projeto Projeto { get; set; }
         public PlanoDeTeste PlanoDeTeste { get; set; }
         public AnalistaQA AnalistaQA { get; set; }
+        public List<Teste> Testes { get; set; }
         public Usuario Usuario { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataFim { get; set; }

@@ -10,6 +10,7 @@ namespace Sonnar.Domain.Models
     {
         public Guid Id { get; set; }
         public Usuario Usuario { get; set; }
+        public Projeto Projeto { get; set; }    
         public List<Teste> Testes { get; set; }
     }
 }

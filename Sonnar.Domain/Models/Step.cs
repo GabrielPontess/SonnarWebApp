@@ -9,5 +9,6 @@ namespace Sonnar.Domain.Models
         public Metodologia Metodologia { get; set; }
         public Desenvolvedor Desenvolvedor { get; set; }
         public String Descricao { get; set; }
+        public Teste Teste { get; set; }    
     }
 }

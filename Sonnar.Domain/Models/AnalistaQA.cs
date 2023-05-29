@@ -4,7 +4,7 @@ namespace Sonnar.Domain.Models
 {
     public class AnalistaQA : Base
     {
-        protected AnalistaQA(string nome) : base(nome)
+        protected AnalistaQA(string nome, Usuario usuario) : base(nome, usuario)
         {
         }
     }
