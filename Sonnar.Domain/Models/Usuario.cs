@@ -18,6 +18,7 @@ namespace Sonnar.Domain.Models
         public List<Metodologia> Metodologias { get; set; }
         public List<Desenvolvedor> Desenvolvedores { get; set; }
         public List<Projeto> Projetos { get; set; }
+        public string PerfilBase64 { get; set; }
         public DateTime DataCadastro { get; set; }
         public DateTime DataDeNascimento { get; set; }
     }

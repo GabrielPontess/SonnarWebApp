@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using Sonnar.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+string connectionString = "Server=RN0990\\MSSQLSERVER01;Database=SonnarDb;Integrated Security=SSPI; MultipleActiveResultSets=true";
+builder.Services.AddDbContext<SonnarDbContext>(options => options.UseSqlServer(connectionString));
+
+
 
 var app = builder.Build();
 

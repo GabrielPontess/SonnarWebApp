@@ -10,12 +10,13 @@ namespace Sonnar.Domain.Models
     {
         public Guid Id { get; set; }
         public String nome { get; set; }
+        public Guid UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
-        protected Base(string nome, Usuario usuario)
+        protected Base(string nome, Guid usuarioId)
         {
             Id = Guid.NewGuid();
             this.nome = nome;
-            Usuario = usuario;
+            UsuarioId = usuarioId;
         }
     }
 }

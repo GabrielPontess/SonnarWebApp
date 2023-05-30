@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Sonnar.Domain.Models
 {
-    public class PlanoDeTeste
+    public class PlanoDeTeste : Base
     {
-        public Guid Id { get; set; }
-        public Usuario Usuario { get; set; }
-        public Projeto Projeto { get; set; }    
-        public List<Teste> Testes { get; set; }
+        protected PlanoDeTeste(string nome, Guid usuarioId) : base(nome, usuarioId)
+        {
+        }
     }
 }

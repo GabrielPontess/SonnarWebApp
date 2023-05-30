@@ -1,6 +1,6 @@
 ﻿namespace Sonnar.Domain.Enumerators
 {
-    public enum Status
+    public enum StatusTeste
     {
         Aberto = 1,
         Desenvolvimento,

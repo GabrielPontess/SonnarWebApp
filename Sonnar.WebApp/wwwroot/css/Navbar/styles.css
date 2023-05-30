@@ -1,0 +1,47 @@
+﻿.sonnar-navbar {
+    background-color: #1A2934;
+    border-bottom-right-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+
+.sonnar-navbar-background {
+    background-color: #19232F;
+    border-bottom-right-radius: 2rem;
+}
+
+.sonnar-navbar-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.sonnar-navbar-item {
+    width: 100%;
+    border: 1rem;
+    padding: 0.8rem;
+    border-radius: 0.8rem;
+    text-align: start;
+    cursor: pointer;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #FFFFFF;
+}
+
+.sonnar-navbar-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.sonnar-navbar-profile-informations{
+   width: 100%;
+   height:2rem;
+}
+
+.user-image {
+    border-radius: 100%;
+    width: 100%;
+    max-width: 45px;
+    height: auto;
+}
