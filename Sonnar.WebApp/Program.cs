@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using Sonnar.Domain.Interfaces;
 using Sonnar.Infrastructure;
+using Sonnar.Infrastructure.Repositories;
+using Sonnar.Infrastructure.UoW;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +11,7 @@ builder.Services.AddControllersWithViews();
 
 string connectionString = "Server=RN0990\\MSSQLSERVER01;Database=SonnarDb;Integrated Security=SSPI; MultipleActiveResultSets=true";
 builder.Services.AddDbContext<SonnarDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddScoped<IUnitOfWork, UnityOfWork>();
 
 
 
