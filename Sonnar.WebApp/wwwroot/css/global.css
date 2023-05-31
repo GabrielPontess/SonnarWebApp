@@ -24,6 +24,22 @@ html {
     color: #702A7C;
 }
 
+.modal-header {
+    background-color: #8935FF;
+}
+
+#ModalSampleTitle {
+    font-family: 'DM Sans','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #eee;
+}
+
+#ModalSampleMessage {
+    font-family: 'DM Sans','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgba(26, 41, 52, 0.7);
+    inline-size: 100%;
+    overflow-wrap: break-word;
+}
+
 .sonnar-card-background {
     display: flex;
     flex-direction: column;
@@ -32,6 +48,18 @@ html {
     background: #FFFEFE;
     border-radius: 1rem;
     color: rgba(26, 41, 52, 0.7);
+}
+
+.sonnar-btn-primary {
+    background-color: #8935FF;
+    padding:0.6rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 110%;
+    text-align: center;
 }
 
 .form-control:hover {

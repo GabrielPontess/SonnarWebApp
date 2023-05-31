@@ -115,35 +115,60 @@
             </div>
         </div>
     }
+
+
+    <div class="modal fade" id="ModalSample" tabindex="-1" aria-labelledby="ModalSampleTitle" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="ModalSampleTitle">Modal title</h1>
+            <button type="button" class="" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="ModalSampleMessage">
+            ...
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="sonnar-btn-primary w-50 h-100" data-bs-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+
+        function ModalShow(titulo, mensagem) {
+            const myModalTitle = document.getElementById('ModalSampleTitle');
+            const myModalMessage = document.getElementById('ModalSampleMessage');
+            const myModal = new bootstrap.Modal('#ModalSample');
+
+            myModalTitle.innerHTML = titulo;
+            myModalMessage.innerHTML = mensagem;
+
+            myModal.show();
+        }
+    </script>
 </body>
-
-<script>
-    (() => {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-    })()
-
-    function Autenticar(){
-        alert('Falha ao se conectar ao  Banco de Dados! ERRO:System.Net.WebException: O servidor remoto retornou um erro: (400) Solicitação Incorreta. ');
-    }
-</script>
-
 </html>

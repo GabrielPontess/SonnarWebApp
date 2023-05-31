@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="~/css/LandingPage/styles.css" />
 <link rel="stylesheet" href="~/css/Registro/styles.css" />
 
+@model Sonnar.WebApp.ViewModels.UsuarioViewModel;
 @{
     ViewData["Title"] = "Registro";
 }
@@ -14,34 +15,43 @@
         </div>
         <div class="col h-100 d-flex flex-row justify-content-center align-content-center mt-5">
             <div class="sonnar-card-background w-75 pt-4 pb-5 ps-4 pe-4">
-                <form class="w-100 needs-validation" novalidate>
+                <form class="w-100 needs-validation" method="post" asp-controller="Registro" asp-action="Registro">
                     <span class="text-muted fs-6">Preencha todos os campos abaixo*</span>
                     <hr>
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="txtNome" aria-describedby="Email" placeholder="Digite seu Nome" required>
+                        <input asp-for="Nome" type="text" class="form-control" id="txtNome" aria-describedby="Nome" placeholder="Digite seu Nome" required>
                         <label for="txtEmail" class="form-label">Nome</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="txtEmail" aria-describedby="Email" placeholder="Digite seu Email" required>
+                        <input asp-for="Email" type="email" class="form-control" id="txtEmail" aria-describedby="Email" placeholder="Digite seu Email" required>
                         <label for="txtEmail" class="form-label">Email</label>
                     </div>
                     <div class="form-floating mb-3 ">
-                        <input type="text" class="form-control" id="txtCargo" aria-describedby="Email" placeholder="Digite seu Cargo" required>
+                        <input asp-for="Cargo" type="text" class="form-control" id="txtCargo" aria-describedby="Cargo" placeholder="Digite seu Cargo" required>
                         <label for="txtEmail" class="form-label">Cargo</label>
                     </div>
+                    <div class="form-floating mb-3 ">
+                        <select asp-for="Genero" class="form-control form-select" id="slctGenero" aria-describedby="Cargo" placeholder="Selecione o seu Gênero" required>
+                            <option selected disabled>Selecione o seu Gênero</option>
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                            <option value="O">Outro</option>
+                        </select>
+                        <label for="slctGenero" class="form-label">Gênero</label>
+                    </div>
                     <div class="form-floating mb-3">
-                        <input type="date" class="form-control" id="dtNasc" aria-describedby="Email" placeholder="Digite seu email" required>
+                        <input asp-for="DataDeNascimento" type="date" class="form-control" id="dtNasc" aria-describedby="DataNascimento" placeholder="Data de Nascimento" required>
                         <label for="txtEmail" class="form-label">Data de Nascimento</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="password" class="form-control" id="txtPassword" placeholder="Digite sua senha" required>
+                        <input asp-for="Senha" type="password" class="form-control" id="txtPassword" placeholder="Digite sua senha" required>
                         <label for="txtPassword" class="form-label">Senha</label>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="password" class="form-control" id="txtConfirmPassword" placeholder="Confirme sua senha" required>
                         <label for="txtPassword" class="form-label">Confirmar senha</label>
                     </div>
-                    <button type="submit" class="layout-btn-login" style="color:snow; width:100%" onclick="Autenticar()">Registrar</button>
+                    <button type="submit" class="layout-btn-login" style="color:snow; width:100%">Registrar</button>
                 </form>
             </div>
         </div>
