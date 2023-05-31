@@ -52,7 +52,7 @@ html {
 
 .sonnar-btn-primary {
     background-color: #8935FF;
-    padding:0.6rem;
+    padding: 0.2rem 0.2rem 0.2rem 0rem;
     border-radius: 0.5rem;
     font-weight: 600;
     font-style: normal;
@@ -167,4 +167,11 @@ footer {
 
 .scrollarea {
     overflow-y: auto;
+}
+
+.sonnar-border-top {
+    width: 100%;
+    height: 0.5px;
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #EFD8F3 100%);
+    opacity: 0.32;
 }

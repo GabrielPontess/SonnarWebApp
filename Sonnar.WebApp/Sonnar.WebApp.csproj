@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Helpers\UsuarioAutenticado.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\assets\img\" />
   </ItemGroup>
 

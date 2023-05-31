@@ -3,6 +3,7 @@ using Sonnar.Domain.Interfaces;
 using Sonnar.Infrastructure;
 using Sonnar.Infrastructure.Repositories;
 using Sonnar.Infrastructure.UoW;
+using Sonnar.WebApp.Helpers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,16 @@ builder.Services.AddControllersWithViews();
 
 string connectionString = "Server=RN0990\\MSSQLSERVER01;Database=SonnarDb;Integrated Security=SSPI; MultipleActiveResultSets=true";
 builder.Services.AddDbContext<SonnarDbContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
 builder.Services.AddScoped<IUnitOfWork, UnityOfWork>();
+builder.Services.AddScoped<Sonnar.WebApp.Helpers.ISession, Session>();
+
+builder.Services.AddSession(o =>
+{
+    o.Cookie.HttpOnly= true;
+    o.Cookie.IsEssential = true;
+});
 
 
 
@@ -31,6 +41,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",

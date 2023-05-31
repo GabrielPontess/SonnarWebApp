@@ -1,6 +1,7 @@
 ﻿<link rel="stylesheet" href="~/css/Login/styles.css" />
 <link rel="stylesheet" href="~/css/LandingPage/styles.css" />
 
+@model Sonnar.WebApp.ViewModels.LoginViewModel
 @{
     ViewData["Title"] = "Login";
 }
@@ -16,14 +17,14 @@
                 <div name="Logo" >
                     <img src="~/assets/img/sonnar-logo-column.png" />
                 </div>
-                <form class="w-100">
+                <form class="w-100" method="post" asp-controller="Login" asp-action="Autenticar">
                     <div class="mb-1">
                         <label for="txtEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="txtEmail" aria-describedby="Email" placeholder="Digite seu email">
+                        <input asp-for="Email" type="email" class="form-control" id="txtEmail" aria-describedby="Email" placeholder="Digite seu email">
                     </div>
                     <div class="mb-3">
                         <label for="txtPassword" class="form-label">Senha</label>
-                        <input type="password" class="form-control" id="txtPassword" placeholder="Digite sua senha">
+                        <input asp-for="Senha" type="password" class="form-control" id="txtPassword" placeholder="Digite sua senha">
                     </div>
                     <button type="submit" class="layout-btn-login" style="color:snow; width:100%" onclick="Autenticar()">Login</button>
                 </form> 

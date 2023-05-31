@@ -6,7 +6,7 @@ namespace Sonnar.Domain.Interfaces
     {
         IQueryable<T> GetAll();
         IQueryable<T> GetAllFromId(Expression<Func<T, bool>> predicate);
-        T GetById(Expression<Func<T, bool>> predicate);
+        T Get(Expression<Func<T, bool>> predicate);
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);

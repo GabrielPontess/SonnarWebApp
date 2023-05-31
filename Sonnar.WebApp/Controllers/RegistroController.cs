@@ -9,33 +9,38 @@ namespace Sonnar.WebApp.Controllers
     public class RegistroController : Controller
     {
         private IUnitOfWork _uow;
-        public RegistroController(IUnitOfWork uow) 
+        private Helpers.ISession _session;
+
+        public RegistroController(IUnitOfWork uow, Helpers.ISession session)
         {
             _uow = uow;
+            _session = session;
         }
 
         public IActionResult Index()
         {
+            if (_session.BuscarSessaoUsuario() != null) return RedirectToAction("Home", "Home");
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult Registro(UsuarioViewModel usuario)
+        public IActionResult Registro(RegistroViewModel usuario)
         {
             try
             {
                 _uow.UsuarioRepository.Add(UsuarioViewModelToUsuario(usuario));
                 _uow.Commit();
+
+                return Redirect("/Login");
             }
             catch
             {
                 throw new Exception("Falha ao persistir usuário no banco de dados!");
             }
-
-            return Index();
         }
 
-        public Usuario UsuarioViewModelToUsuario(UsuarioViewModel usuario)
+        public Usuario UsuarioViewModelToUsuario(RegistroViewModel usuario)
         {
             return new Usuario()
             {

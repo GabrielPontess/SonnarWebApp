@@ -1,6 +1,6 @@
 ﻿namespace Sonnar.WebApp.ViewModels
 {
-    public class UsuarioViewModel
+    public class RegistroViewModel
     {
         public string Nome { get; set; }
         public string Email { get; set; }

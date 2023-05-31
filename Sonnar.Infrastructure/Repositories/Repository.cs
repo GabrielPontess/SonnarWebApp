@@ -29,7 +29,7 @@ namespace Sonnar.Infrastructure.Repositories
             return _context.Set<T>().Where(predicate);
         }
 
-        public T GetById(Expression<Func<T, bool>> predicate)
+        public T Get(Expression<Func<T, bool>> predicate)
         {
             return _context.Set<T>().SingleOrDefault(predicate);
         }
