@@ -36,7 +36,7 @@ namespace Sonnar.WebApp.Controllers
                 }
 
                 _session.CriarSessaoDeUsuario(result);
-                return Redirect("/Dashboard");
+                return RedirectToAction("Home", "Home");
             }
             catch (Exception ex)
             {
