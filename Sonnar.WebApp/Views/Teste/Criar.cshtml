@@ -11,89 +11,107 @@
     Criar Teste
 </div>
 <div class="container d-flex justify-content-center mt-3"> 
- <div class="sonnar-card-background w-75 pt-4 pb-5 ps-4 pe-4 mt-1">
-                <div class="w-100 needs-validation">
-                    <span class="text-muted fs-6">Preencha todos os campos abaixo*</span>
-                    <hr>
-                    <div class="row">
-                        <div class="col-6">
-                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="txtNTarefa" aria-describedby="Número da Tarefa" placeholder="Nº da Tarefa" required>
-                                <label for="txtNTarefa" class="form-label">Nº da Tarefa</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="txtTituloTeste" aria-describedby="Título do Teste" placeholder="Informe o Título do Teste" required>
-                                <label for="txtTituloTeste" class="form-label">Título do Teste</label>
-                            </div>
-                        </div>
+ <div class="sonnar-card-background w-75 pt-4 px-4 mt-1">
+    <div class="w-100 needs-validation">
+        <div class="row d-flex justify-content-end align-content-end">
+                <span class="text-muted fs-6">Preencha todos os campos abaixo*</span>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                    <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="txtNTarefa" aria-describedby="Número da Tarefa" placeholder="Nº da Tarefa" required>
+                    <label for="txtNTarefa" class="form-label">Nº da Tarefa</label>
+                </div>
+            </div>
+            <div class="col-6">
+                    <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="txtTituloTeste" aria-describedby="Título do Teste" placeholder="Informe o Título do Teste" required>
+                    <label for="txtTituloTeste" class="form-label">Título do Teste</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                    <div class="form-floating mb-3">
+                    <textarea type="email" class="form-control h-100" id="txtDescTarefa" aria-describedby="Descrição da Tarefa" placeholder="Descreva o teste que está realizado" required></textarea>
+                    <label for="txtDescTarefa" class="form-label">Descrição do Teste</label>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <div class="form-floating">
+                    <select class="form-control form-select" id="slctProjeto" aria-describedby="Projeto" placeholder="Selecione o Projeto" required>
+                        <option selected disabled>Selecione o Projeto</option>
+                    </select>
+                    <label for="slctProjeto" class="form-label">Projeto</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-floating">
+                    <select class="form-control form-select" id="slctPlanoDeTestes" aria-describedby="Cargo" placeholder="Selecione o Plano de Testes" required>
+                        <option selected disabled>Selecione o Plano de Testes</option>
+                    </select>
+                    <label for="slctPlanoDeTestes" class="form-label">Plano de Testes</label>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <div class="form-floating">
+                <select class="form-control form-select" id="slctAnalistaQa" aria-describedby="AnalistaQA" placeholder="Selecione o seu Analista QA" required>
+                    <option selected disabled>Selecione o seu Analista QA</option>
+                </select>
+                        <label for="slctAnalistaQa" class="form-label">Analista QA</label>
+                </div>
+            </div>
+                <div class="col">
+                    <div class="form-floating">
+                    <input type="date" class="form-control" id="dtDatInicio" aria-describedby="DataInicio" placeholder="Data de Inicio" required>
+                        <label for="dtDatInicio" class="form-label">Data de Inicio</label>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                             <div class="form-floating mb-3">
-                                <textarea type="email" class="form-control h-100" id="txtDescTarefa" aria-describedby="Descrição da Tarefa" placeholder="Descreva o teste que está realizado" required></textarea>
-                                <label for="txtDescTarefa" class="form-label">Descrição do Teste</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-floating">
-                                <select class="form-control form-select" id="slctProjeto" aria-describedby="Projeto" placeholder="Selecione o Projeto" required>
-                                    <option selected disabled>Selecione o Projeto</option>
-                                </select>
-                                <label for="slctProjeto" class="form-label">Projeto</label>
-                            </div>
-                        </div>
-                        <div class="col">
-                          <div class="form-floating">
-                            <select class="form-control form-select" id="slctPlanoDeTestes" aria-describedby="Cargo" placeholder="Selecione o Plano de Testes" required>
-                                <option selected disabled>Selecione o Plano de Testes</option>
-                            </select>
-                            <label for="slctPlanoDeTestes" class="form-label">Plano de Testes</label>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                          <div class="form-floating">
-                            <select class="form-control form-select" id="slctGenero" aria-describedby="Cargo" placeholder="Selecione o seu Gênero" required>
-                                <option selected disabled>Selecione o seu Gênero</option>
-                                <option value="M">Masculino</option>
-                                <option value="F">Feminino</option>
-                                <option value="O">Outro</option>
-                            </select>
-                            <label for="slctGenero" class="form-label">Gênero</label>
-                          </div>
-                        </div>
-                         <div class="col">
-                             <div class="form-floating">
-                                <input type="date" class="form-control" id="dtNasc" aria-describedby="DataNascimento" placeholder="Data de Nascimento" required>
-                                <label for="txtEmail" class="form-label">Data de Nascimento</label>
-                             </div>
-                          </div>
-                          <div class="col">
-                              <div class="form-floating">
-                                <input type="date" class="form-control" id="dtNasc" aria-describedby="DataNascimento" placeholder="Data de Nascimento" required>
-                                <label for="txtEmail" class="form-label">Data de Nascimento</label>
-                              </div>
-                          </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                          <button class="sonnar-btn-primary w-50 h-100" style="color:snow; width:100%">Adicionar Step</button>
-                        </div>
-                        <div> class="col-4">
-                            <button class="sonnar-btn-primary w-50 h-100" style="color:snow; width:100%">Adicionar Evidência</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                    </div>
-                    <div class="row">
-                        <button class="sonnar-btn-primary w-50 h-100" style="color:snow; width:100%">Salvar</button>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                    <input type="date" class="form-control" id="dtFim" aria-describedby="DataFinal" placeholder="Data Final" required>
+                        <label for="dtFim" class="form-label">Data Final</label>
                     </div>
                 </div>
             </div>
+
+        <div class="row mb-3 d-flex flex-row justify-content-start gap-3 ms-1">
+            <button class="sonnar-btn-rounded">
+                <div class="sonnar-btn-rounded-purple">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#FFFFFF" class="bi bi-plus" viewBox="0 0 16 16">
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg>
+                </div>
+                <span>Adicionar Step</span>
+            </button>
+            <button class="sonnar-btn-rectangle">
+                <div class="sonnar-btn-rectangle-purple">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="26" fill="#FFFFFF" class="bi bi-image" viewBox="0 0 16 16">
+                            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+                            <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z" />
+                        </svg>
+                </div>
+                <span>Adicionar Evidência</span>
+            </button>
+            <input id="EvidenciaFile" type="file" style="display:none"/>
+        </div>
+
+        <div class="row mb-3">
+
+        </div>
+
+        <div class="row mb-3 d-flex justify-content-end gap-1">
+                <button class="sonnar-btn-primary sn-orange" style="width: 130px;height: 45px;">Voltar</button>
+                <button class="sonnar-btn-primary sn-red" style="width: 130px;height: 45px;">Remover</button>
+                <button class="sonnar-btn-primary sn-purple" style="width: 130px;height: 45px;">Salvar</button>
+                <button class="sonnar-btn-primary sn-green" style="width: 130px;height: 45px;">Finalizar</button>
+        </div>
+
+        </div>
+    </div>
 </div>

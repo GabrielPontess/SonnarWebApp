@@ -23,7 +23,6 @@ namespace Sonnar.Infrastructure.Repositories
             return _context.Set<T>().AsNoTracking();
         }
 
-
         public IQueryable<T> GetAllFromId(Expression<Func<T, bool>> predicate)
         {
             return _context.Set<T>().Where(predicate);
