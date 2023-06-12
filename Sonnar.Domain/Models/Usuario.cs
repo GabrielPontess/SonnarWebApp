@@ -21,6 +21,7 @@ namespace Sonnar.Domain.Models
         public List<AnalistaQA> AnalistaQAs { get; set; }
         public List<Metodologia> Metodologias { get; set; }
         public List<Desenvolvedor> Desenvolvedores { get; set; }
+        public List<PlanoDeTeste> PlanoDeTestes { get; set; }
         public List<Projeto> Projetos { get; set; }
         public string? PerfilBase64 { get; set; }
         public DateTime DataCadastro { get; set; }

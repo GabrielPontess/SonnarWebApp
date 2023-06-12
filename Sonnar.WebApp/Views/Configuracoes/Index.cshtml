@@ -1,0 +1,175 @@
+﻿@model Sonnar.Domain.Models.Usuario
+
+@{
+}
+<div class="layout-page-header">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+      <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+      <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+    </svg>
+    Configurações
+</div>
+
+
+<div class="container d-flex justify-content-center mt-3">
+    <div class="sonnar-card-background w-75 pt-4 px-4 mt-1">
+        <form class="w-100 needs-validation">
+            <div class="row mb-2">
+                <div class="col d-flex flex-row justify-content-start align-items-center gap-2">
+                    <img class="user-image" src="~/assets/img/avatar.jpg" />
+                    <input type="file" class="form-control w-100 h-75" />
+                </div>
+                <div class="col-8">
+                   <div class="form-floating">
+                        <input asp-for="Nome" type="text" class="form-control" id="txtNome" aria-describedby="Nome" placeholder="Digite seu Nome" required>
+                        <label for="txtEmail" class="form-label">Nome</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="Cargo" type="text" class="form-control" id="txtCargo" aria-describedby="Cargo" placeholder="Digite seu Cargo" required>
+                        <label for="txtEmail" class="form-label">Cargo</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="Email" type="email" class="form-control" id="txtEmail" aria-describedby="Email" placeholder="Digite seu Email" required>
+                        <label for="txtEmail" class="form-label">Email</label>
+                    </div>                
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="Senha" type="password" class="form-control" id="txtPassword" placeholder="Digite sua senha" required>
+                        <label for="txtPassword" class="form-label">Senha</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input asp-for="Senha" type="password" class="form-control" id="txtPassword" placeholder="Confirme sua senha" required>
+                        <label for="txtPassword" class="form-label">Confirmação de Senha</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sonnar-border-top mb-3 mt-4"></div>
+
+            <div class="row mb-3 d-flex flex-row align-items-center gap-1">
+                <div class="col-8">
+                    <div class="form-floating">
+                        <select class="form-control form-select" id="slctAnalistaQa" aria-describedby="AnalistaQA" placeholder="Selecione o seu Analista QA" required>
+                            <option selected disabled>Selecione o seu Analista QA</option>
+                            @if (Model.AnalistaQAs != null)
+                            {
+                                @foreach (var AnalistaQA in Model.AnalistaQAs)
+                                {
+                                    <option selected disabled>@AnalistaQA.nome</option>
+                                }
+                            }
+                        </select>
+                        <label for="slctAnalistaQa" class="form-label">Analista QA</label>
+                    </div>
+                </div>
+                <button class="sonnar-btn-primary sn-red" style="width: 120px;height: 40px;" onclick="RemoverEntidade(0);">Remover</button>
+                    <button class="sonnar-btn-primary sn-green" style="width: 120px;height: 40px;" onclick="AdicionarEntidade(0);">Adicionar</button>
+            </div>
+
+            <div class="row mb-3 d-flex flex-row align-items-center gap-1">
+                <div class="col-8">
+                    <div class="form-floating">
+                        <select class="form-control form-select" id="slctDesenvolvedor" aria-describedby="Desenvolvedor" placeholder="Selecione o seu Desenvolvedor" required>
+                            <option selected disabled>Selecione o seu Desenvolvedor</option>
+                            @if (Model.Desenvolvedores != null)
+                            {
+                                @foreach (var desenvolvedor in Model.Desenvolvedores)
+                                {
+                                    <option selected disabled>@desenvolvedor.nome</option>
+                                }
+                            }
+                        </select>
+                        <label for="slctAnalistaQa" class="form-label">Desenvolvedor</label>
+                    </div>
+                </div>
+                <button class="sonnar-btn-primary sn-red" style="width: 120px;height: 40px;" onclick="RemoverEntidade(1);">Remover</button>
+                <button class="sonnar-btn-primary sn-green" style="width: 120px;height: 40px;" onclick="AdicionarEntidade(1);">Adicionar</button>
+            </div>
+
+            <div class="row mb-3 d-flex flex-row align-items-center gap-1">
+                <div class="col-8">
+                    <div class="form-floating">
+                        <select class="form-control form-select" id="slctMetodologia" aria-describedby="Metodologias" placeholder="Selecione a sua Metodologia" required>
+                            <option selected disabled>Selecione a sua Metodologia</option>
+                            @if (Model.Metodologias != null)
+                            {
+                                @foreach (var metodologia in Model.Metodologias)
+                                {
+                                    <option selected disabled>@metodologia.nome</option>
+                                }
+                            }
+                        </select>
+                        <label for="slctAnalistaQa" class="form-label">Metodologia</label>
+                    </div>
+                </div>
+                <button class="sonnar-btn-primary sn-red" style="width: 120px;height: 40px;" onclick="RemoverEntidade(2);">Remover</button>
+                <button class="sonnar-btn-primary sn-green" style="width: 120px;height: 40px;" onclick="AdicionarEntidade(2);">Adicionar</button>
+            </div>
+
+
+            <div class="row mb-3 d-flex flex-row align-items-center gap-1">
+                <div class="col-8">
+                    <div class="form-floating">
+                        <select class="form-control form-select" id="slctPlanoDeTeste" aria-describedby="Plano de Testes" placeholder="Selecione o seu Plano de Testes" required>
+                            <option selected disabled>Selecione o seu Plano de Testes</option>
+                            @if (Model.PlanoDeTestes != null)
+                            {
+                                @foreach (var planoDeTeste in Model.PlanoDeTestes)
+                                {
+                                    <option selected disabled>@planoDeTeste.nome</option>
+                                }
+                            }
+                        </select>
+                        <label for="slctAnalistaQa" class="form-label">Plano de Testes</label>
+                    </div>
+
+                </div>
+                <button class="sonnar-btn-primary sn-red" style="width: 120px;height: 40px;" onclick="RemoverEntidade(3);">Remover</button>
+                <button class="sonnar-btn-primary sn-green" style="width: 120px;height: 40px;" onclick="AdicionarEntidade(3);">Adicionar</button>
+            </div>
+
+
+            <div class="row mb-3 d-flex flex-row align-items-center gap-1">
+                <div class="col-8">
+                    <div class="form-floating">
+                        <select class="form-control form-select" id="slctProjeto" aria-describedby="Projetos" placeholder="Selecione o seu Projeto" required>
+                            <option selected disabled>Selecione a sua Metodologia</option>
+                            @if (Model.Projetos != null)
+                            {
+                                @foreach (var projeto in Model.Projetos)
+                                {
+                                    <option selected disabled>@projeto.nome</option>
+                                }
+                            }
+                        </select>
+                        <label for="slctAnalistaQa" class="form-label">Selecione o seu Projeto</label>
+                    </div>
+
+                </div>
+                <button class="sonnar-btn-primary sn-red" style="width: 120px;height: 40px;" onclick="RemoverEntidade(4);">Remover</button>
+                <button class="sonnar-btn-primary sn-green" style="width: 120px;height: 40px;" onclick="AdicionarEntidade(4);">Adicionar</button>
+            </div>
+
+            <div class="sonnar-border-top mb-3 mt-4"></div>
+            <div class="row mb-3 d-flex justify-content-end gap-1">
+                <button class="sonnar-btn-primary sn-orange" style="width: 130px;height: 40px;">Voltar</button>
+                <button class="sonnar-btn-primary sn-purple" style="width: 130px;height: 40px;">Salvar</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+<script>
+    
+</script>

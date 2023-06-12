@@ -19,7 +19,7 @@ namespace Sonnar.WebApp.Controllers
 
         public IActionResult Index()
         {
-            if (_session.BuscarSessaoUsuario() != null) return RedirectToAction("Home", "Home");
+            if (_session.BuscarSessaoUsuario() != null) return RedirectToAction("Index", "Inicio");
 
             return View();
         }
